@@ -1,0 +1,665 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  overflow-x: hidden; /* Impede rolagem horizontal causada por imagens que vazam */
+    scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'CSBoline';
+  src: url('/Marca/Fontes/cs-boline-drawn-font-1756296765-0/csb.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Candara';
+  src: url('/Marca/Fontes/candara-font-family/Candara.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  font-family: 'Candara', sans-serif;
+}
+
+h2 {
+   font-family: 'CSBoline', sans-serif;
+}
+
+/* Seções */
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh; /* 90% da altura do viewport */
+  background-color: #f0f0f0;
+  border: 2px solid #333;
+  margin: 0 auto;
+  position: relative;  /* contexto para imagens posicionadas absolutamente */
+  overflow: visible;   /* permite que imagens ultrapassem a seção (mas não o body) */
+}
+
+.content {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px red solid;
+  position: relative; /* mantém contexto para filhos */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7F3D1D;
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  padding: 0;
+}
+
+/* Container de conteúdo da navbar */
+.navbar-content {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+/* Logo da navbar */
+.navbar-logo a {
+  display: inline-block;
+  position: relative;
+}
+
+.navbar-logo #logo-hover {
+  display: none;
+}
+
+.navbar-logo a:hover .logo-img {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.navbar-logo img {
+  max-width: 120px;
+  height: auto;
+  padding: 0.5rem 0;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Ícone Instagram */
+.navbar .fab {
+  font-size: 6rem;
+  color: #E3BF87;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar .fab:hover {
+  transform: scale(1.3);
+  color: #f1b63e;
+  text-shadow: 0 0 8px rgba(241, 182, 62, 0.5);
+}
+
+/* Links da navbar */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 80px;
+}
+
+.navbar-links li {
+  font-size: 4rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #E3BF87;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+  transition: color 0.3s ease, transform 0.3s ease;
+   font-family: 'CSBoline', sans-serif;
+}
+
+/* Linha de destaque animada */
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f1b63e;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #f1b63e;
+  transform: translateY(-2px) scale(1.2);
+}
+
+.navbar-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.navbar-links a:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(241, 182, 62, 0.5);
+}
+
+
+/* Seções - Capa */
+.capa {
+  background-color: #e3bf87;
+  position: relative;
+  overflow: visible;
+  height: 90vh;
+}
+
+/* Imagens posicionadas dentro da seção Capa */
+.capa .fixed-img {
+  position: absolute;
+  z-index: 10;
+  max-width: 40000px; /* limite fixo para desktop */
+  height: auto;
+  object-fit: contain;
+}
+
+.capa .logo-animada {
+  top: -50px;
+  left: 1300px;    /* distância da esquerda */
+  width: 1350px;   /* largura fixa */
+}
+
+/* Imagem 1 */
+.capa .img1 {
+  top: -28rem;    /* 15rem = 150px acima */
+  left: 1250px;    /* distância da esquerda */
+  width: 800px;   /* largura fixa */
+}
+
+/* Imagem 2 */
+.capa .img2 {
+  bottom: -28rem; /* 25rem = 250px abaixo */
+  right: 1250px;   /* distância da direita */
+  transform: scale(-1, -1);
+  width: 800px;
+}
+
+/* Seção Projeto */
+.Projeto {
+  background-color: #e3bf87;
+  position: relative;
+  overflow: visible;
+  height: 90vh; /* para manter a altura como na capa */
+}
+
+/* Conteúdo textual */
+.Projeto p {
+  font-size: 3.5rem; /* 40px */
+  margin-top: 2rem; /* 20px */
+  text-align: justify !important;
+}
+
+.Projeto .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 80%;
+  height: 100%;
+  padding: 2rem; /* 20px */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.Projeto .content > * {
+  width: 50%;
+  text-align: left;
+}
+
+/* Texto invasor */
+.Projeto .texto-invasor {
+  position: relative;
+  transform: translateY(-15rem); /* -150px */
+  z-index: 5;
+}
+
+/* Imagens fixas */
+.Projeto .fixed-img {
+  position: absolute;
+  z-index: 10;
+  max-width: 4000px; /* limite grande para desktop */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Imagem 1 */
+.Projeto .img1 {
+  top: -120px;       /* posição fixa */
+  left: 350px;
+  width: 400px;     /* tamanho fixo */
+  animation: girar 60s linear infinite;
+}
+
+/* Imagem 2 */
+.Projeto .img2 {
+  bottom: -70px;    /* distância fixa da base */
+  right: 1000px;
+  width: 600px;
+}
+
+/* Imagem 3 */
+.Projeto .img3 {
+  bottom: -3px;
+  right: -300px;
+  width: 1200px;
+  clip-path: inset(0 0% 0 0); /* corta parte direita para evitar overflow */
+}
+
+/* Seção Ameaça */
+.ameaca {
+  background-color: #7F3D1D;
+  position: relative;
+  overflow: visible;
+  height: 90vh;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)),
+    url("/Imagens/Design sem nome (3).png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ameaca h2 {
+  padding-top: 3rem; /* 30px */
+  padding-bottom: 3rem;
+  text-align: left;
+  font-size: 8rem;
+  margin: 0;
+  color: #e3bf87;
+}
+
+.ameaca p {
+  font-size: 3.5rem;
+  margin-top: 1.5rem;
+  text-align: justify !important;
+  color: #e3bf87;
+}
+
+.ameaca .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 80%;
+  height: 100%;
+  padding: 2rem 1.25rem; /* 20px 20px */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.ameaca .content > * {
+  width: 50%;
+  text-align: left;
+}
+
+.ameaca .content h2 {
+  width: 80%; /* ou 100% se quiser ocupar tudo */
+}
+
+.meia-elipse {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 300px;
+  background-color: #e3bb7d; /* bege */
+  border: 12px solid #2f3e1e; /* verde escuro */
+  border-right: none;
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-sizing: border-box;
+display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* garante que nada saia da elipse */
+}
+
+.meia-elipse {
+  /* ... já está com seu CSS atual */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* garante que nada saia da elipse */
+}
+
+.img-na-elipse {
+  position: absolute;
+  width: 250px; /* ou o tamanho desejado */
+  height: auto;
+  object-fit: contain;
+
+  top: 10%;
+  left: 10%;
+}
+
+/* Imagens posicionadas dentro da seção Ameaça */
+.ameaca .fixed-img {
+  position: absolute;
+  z-index: 10;
+  max-width: 4000px; /* tamanho fixo */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Imagem 1 */
+.ameaca .img1 {
+  top: 30%;    /* 180% para ultrapassar a área */
+  left: 800PX;
+  width: 750px; /* tamanho fixo */
+  position: absolute;
+  object-fit: contain;
+}
+
+
+.divisor {
+  height: 80px; /* espessura da linha */
+  background-color: #7F3D1D; /* cor da linha */
+  width: 100%;
+}
+
+/* Seção Cultura */
+.cultura {
+  height: 100vh;
+  position: relative;
+  background-color: #000; /* cor fallback */
+  background-image: url('/Imagens/burru.png'); /* substitua pelo caminho da imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4rem 0;
+}
+
+
+.cultura .content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 90%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+/* Imagem ocupa a esquerda e todo o espaço possível */
+.cultura-img {
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cultura-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Texto fica à direita, com largura limitada */
+.cultura-texto {
+  width: 50%;
+  text-align: justify; /* texto justificado */
+  font-size: 3.5rem; /* reduz um pouco para melhorar legibilidade */
+  line-height: 1.6; /* espaçamento entre linhas para melhor leitura */
+  color: #fff; /* cor branca para contraste com fundo escuro */
+background-color: rgba(139, 69, 19, 0.8); /* exemplo */
+  padding: 3rem; /* espaçamento interno */
+  border-radius: 20px; /* bordas arredondadas */
+  letter-spacing: 0.05em; /* espaçamento entre letras */
+  box-sizing: border-box; /* garantir que padding não aumente a largura */
+  
+}
+
+
+
+
+/* Seção Assinatura */
+.assinatura {
+  background-color: #E3BF87;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;   /* 🔑 referência para as imagens */
+  overflow: hidden;    /* permite que as imagens vazem */
+  z-index: 1;
+  height: 115%;
+}
+
+.assinatura h2 {
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 8rem;   /* 4rem é grande, mas legível, pode aumentar se quiser */
+  margin: 0 0 5rem 0; /* margem embaixo para dar espaçamento */
+  color: #354524;
+}
+
+.assinatura p {
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 3.5rem;   /* 4rem é grande, mas legível, pode aumentar se quiser */
+  margin: 0 0 5rem 0; /* margem embaixo para dar espaçamento */
+  color: #354524;
+}
+
+.assinatura .container {
+  max-width: 600px;   /* limita largura do formulário */
+  width: 100%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.assinatura label {
+  font-weight: bold;
+  font-size: 3rem;
+  color: #5a3a21;
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  text-align: left;    /* garante que o texto do label fique alinhado à esquerda */
+  width: 100%;
+}
+
+.assinatura input[type="text"],
+.assinatura input[type="email"],
+.assinatura textarea {
+   width: 700px; /* largura fixa em pixels */
+  max-width: 100%;      /* garante que não ultrapasse */
+  padding: 15px 20px;
+  font-size: 3rem;
+  border: 5px solid #7f5732;
+  border-radius: 30px;
+  outline: none;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  resize: none;
+  
+  height: 60px;         /* controla a altura dos inputs */
+}
+
+.assinatura textarea {
+  min-height: 120px;    /* altura maior para o campo de texto */
+  height: 100px;         /* permite expandir conforme conteúdo */
+}
+
+.assinatura button {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #34401e;
+  color: #F4C970;
+  border: none;
+  padding: 25px 35px;
+  font-size: 4rem;
+  border-radius: 30px;
+  cursor: pointer;
+  text-transform: none;
+  font-weight: bold;
+  width: max-content;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+   font-family: 'CSBoline', sans-serif;
+  animation: pulse-slow 2.5s ease-in-out infinite;
+}
+
+.assinatura button:hover {
+  background-color: #7F3D1D; /* NOVA cor ao hover */
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(244, 201, 112, 0.5);
+}
+
+/* animação de pulso contínua */
+@keyframes pulse-slow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(244, 201, 112, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px 5px rgba(244, 201, 112, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(244, 201, 112, 0.4);
+  }
+}
+
+/* Patterns da Assinatura */
+.assinatura .fixed-img {
+  position: absolute;   /* 🔑 não interfere no fluxo */
+  z-index: 10;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Imagem 1 direita*/
+.assinatura .img1 {
+   bottom: -28rem;  /* desce da borda da seção */
+  left: 75%;
+  width: 900px;
+}
+
+/* Imagem 2 */
+.assinatura .img2 {
+  bottom: -28rem;  /* desce da borda da seção */
+  right: 75%;
+ transform: scaleX(-1);
+width: 900px;
+}
+
+
+.footer {
+  background-color: #7F3D1D;
+  color: #E3BF87;
+  height: 80px;               /* mesma altura do header/nav */
+  display: flex;
+  align-items: center;
+  position: relative;         /* referência para a ferradura */
+  overflow: visible;          /* deixa a ferradura vazar pra cima */
+}
+
+.footer-content {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  position: relative; /* garante que textos fiquem normais */
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+  font-size: 3.5rem;
+  color: #E3BF87;
+   font-family: 'CSBoline', sans-serif;
+}
+
+.footer-left a,
+.footer-right a {
+  color: #E3BF87;
+  text-decoration: none;
+  transition: color 0.3s ease;
+   font-family: 'CSBoline', sans-serif;
+}
+
+.footer-left a:hover,
+.footer-right a:hover {
+  color: #f1b63e;
+}
+
+.footer-left { text-align: left; }
+.footer-right { text-align: right; }
+
+/* ferradura solta no meio */
+.scroll-image {
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 200px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  z-index: 100;
+}
+
+/* Efeito ao passar o mouse */
+.scroll-image:hover {
+  transform: translateX(-50%) translateY(-25px) scale(1.1);
+  filter: brightness(1.4) drop-shadow(0 0 20px #f1b63e) drop-shadow(0 0 40px #f1b63e);
+}
+
+
+
+
+
