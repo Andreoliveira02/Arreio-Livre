@@ -9,20 +9,20 @@ html, body {
   height: 100%;
   font-family: Arial, sans-serif;
   font-size: 10px;
-  overflow-x: hidden; /* Impede rolagem horizontal causada por imagens que vazam */
+  overflow-x: hidden; 
     scroll-behavior: smooth;
 }
 
 @font-face {
   font-family: 'CSBoline';
-  src: url('/Marca/Fontes/cs-boline-drawn-font-1756296765-0/csb.otf') format('opentype');
+  src: url('./csb.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Candara';
-  src: url('/Marca/Fontes/candara-font-family/Candara.ttf') format('opentype');
+  src: url('./Candara.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -41,12 +41,12 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh; /* 90% da altura do viewport */
+  height: 90vh; 
   background-color: #f0f0f0;
   border: 2px solid #333;
   margin: 0 auto;
-  position: relative;  /* contexto para imagens posicionadas absolutamente */
-  overflow: visible;   /* permite que imagens ultrapassem a seção (mas não o body) */
+  position: relative;  
+  overflow: visible;   
 }
 
 .content {
@@ -58,7 +58,7 @@ h2 {
   align-items: center;
   text-align: center;
   border: 2px red solid;
-  position: relative; /* mantém contexto para filhos */
+  position: relative;
 }
 
 /* Navbar */
@@ -180,28 +180,28 @@ h2 {
 .capa .fixed-img {
   position: absolute;
   z-index: 10;
-  max-width: 40000px; /* limite fixo para desktop */
+  max-width: 40000px; 
   height: auto;
   object-fit: contain;
 }
 
 .capa .logo-animada {
   top: -50px;
-  left: 1300px;    /* distância da esquerda */
-  width: 1350px;   /* largura fixa */
+  left: 1300px;   
+  width: 1350px;  
 }
 
 /* Imagem 1 */
 .capa .img1 {
-  top: -28rem;    /* 15rem = 150px acima */
-  left: 1250px;    /* distância da esquerda */
-  width: 800px;   /* largura fixa */
+  top: -28rem;   
+  left: 1250px;  
+  width: 800px;   
 }
 
 /* Imagem 2 */
 .capa .img2 {
-  bottom: -28rem; /* 25rem = 250px abaixo */
-  right: 1250px;   /* distância da direita */
+  bottom: -28rem; 
+  right: 1250px;  
   transform: scale(-1, -1);
   width: 800px;
 }
@@ -211,13 +211,13 @@ h2 {
   background-color: #e3bf87;
   position: relative;
   overflow: visible;
-  height: 90vh; /* para manter a altura como na capa */
+  height: 90vh; 
 }
 
 /* Conteúdo textual */
 .Projeto p {
-  font-size: 3.5rem; /* 40px */
-  margin-top: 2rem; /* 20px */
+  font-size: 3.5rem; 
+  margin-top: 2rem; 
   text-align: justify !important;
 }
 
@@ -228,7 +228,7 @@ h2 {
   justify-content: flex-start;
   width: 80%;
   height: 100%;
-  padding: 2rem; /* 20px */
+  padding: 2rem; 
   box-sizing: border-box;
   position: relative;
   z-index: 1;
@@ -242,7 +242,7 @@ h2 {
 /* Texto invasor */
 .Projeto .texto-invasor {
   position: relative;
-  transform: translateY(-15rem); /* -150px */
+  transform: translateY(-15rem); 
   z-index: 5;
 }
 
@@ -250,22 +250,22 @@ h2 {
 .Projeto .fixed-img {
   position: absolute;
   z-index: 10;
-  max-width: 4000px; /* limite grande para desktop */
+  max-width: 4000px; 
   height: auto;
   object-fit: contain;
 }
 
 /* Imagem 1 */
 .Projeto .img1 {
-  top: -120px;       /* posição fixa */
+  top: -120px;     
   left: 350px;
-  width: 400px;     /* tamanho fixo */
+  width: 400px;   
   animation: girar 60s linear infinite;
 }
 
 /* Imagem 2 */
 .Projeto .img2 {
-  bottom: -70px;    /* distância fixa da base */
+  bottom: -70px;   
   right: 1000px;
   width: 600px;
 }
@@ -275,7 +275,7 @@ h2 {
   bottom: -3px;
   right: -300px;
   width: 1200px;
-  clip-path: inset(0 0% 0 0); /* corta parte direita para evitar overflow */
+  clip-path: inset(0 0% 0 0); 
 }
 
 /* Seção Ameaça */
@@ -286,14 +286,14 @@ h2 {
   height: 90vh;
   background-image:
     linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)),
-    url("/Imagens/Design sem nome (3).png");
+    url("./terra.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .ameaca h2 {
-  padding-top: 3rem; /* 30px */
+  padding-top: 3rem; 
   padding-bottom: 3rem;
   text-align: left;
   font-size: 8rem;
@@ -315,7 +315,7 @@ h2 {
   justify-content: flex-start;
   width: 80%;
   height: 100%;
-  padding: 2rem 1.25rem; /* 20px 20px */
+  padding: 2rem 1.25rem;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
@@ -327,7 +327,7 @@ h2 {
 }
 
 .ameaca .content h2 {
-  width: 80%; /* ou 100% se quiser ocupar tudo */
+  width: 80%; 
 }
 
 .meia-elipse {
@@ -337,8 +337,8 @@ h2 {
   transform: translateY(-50%);
   width: 500px;
   height: 300px;
-  background-color: #e3bb7d; /* bege */
-  border: 12px solid #2f3e1e; /* verde escuro */
+  background-color: #e3bb7d; 
+  border: 12px solid #2f3e1e; 
   border-right: none;
   border-top-left-radius: 999px;
   border-bottom-left-radius: 999px;
@@ -348,20 +348,19 @@ h2 {
 display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* garante que nada saia da elipse */
+  overflow: hidden; 
 }
 
 .meia-elipse {
-  /* ... já está com seu CSS atual */
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* garante que nada saia da elipse */
+  overflow: hidden; 
 }
 
 .img-na-elipse {
   position: absolute;
-  width: 250px; /* ou o tamanho desejado */
+  width: 250px; 
   height: auto;
   object-fit: contain;
 
@@ -373,24 +372,24 @@ display: flex;
 .ameaca .fixed-img {
   position: absolute;
   z-index: 10;
-  max-width: 4000px; /* tamanho fixo */
+  max-width: 4000px; 
   height: auto;
   object-fit: contain;
 }
 
 /* Imagem 1 */
 .ameaca .img1 {
-  top: 30%;    /* 180% para ultrapassar a área */
+  top: 30%;    
   left: 800PX;
-  width: 750px; /* tamanho fixo */
+  width: 750px; 
   position: absolute;
   object-fit: contain;
 }
 
 
 .divisor {
-  height: 80px; /* espessura da linha */
-  background-color: #7F3D1D; /* cor da linha */
+  height: 80px; 
+  background-color: #7F3D1D; 
   width: 100%;
 }
 
@@ -398,8 +397,8 @@ display: flex;
 .cultura {
   height: 100vh;
   position: relative;
-  background-color: #000; /* cor fallback */
-  background-image: url('/Imagens/burru.png'); /* substitua pelo caminho da imagem */
+  background-color: #000; 
+  background-image: url('./burru.png'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -444,15 +443,15 @@ display: flex;
 /* Texto fica à direita, com largura limitada */
 .cultura-texto {
   width: 50%;
-  text-align: justify; /* texto justificado */
-  font-size: 3.5rem; /* reduz um pouco para melhorar legibilidade */
-  line-height: 1.6; /* espaçamento entre linhas para melhor leitura */
-  color: #fff; /* cor branca para contraste com fundo escuro */
-background-color: rgba(139, 69, 19, 0.8); /* exemplo */
-  padding: 3rem; /* espaçamento interno */
-  border-radius: 20px; /* bordas arredondadas */
-  letter-spacing: 0.05em; /* espaçamento entre letras */
-  box-sizing: border-box; /* garantir que padding não aumente a largura */
+  text-align: justify; 
+  font-size: 3.5rem; 
+  line-height: 1.6; 
+  color: #fff; 
+background-color: rgba(139, 69, 19, 0.8); 
+  padding: 3rem; 
+  border-radius: 20px; 
+  letter-spacing: 0.05em; 
+  box-sizing: border-box; 
   
 }
 
@@ -468,8 +467,8 @@ background-color: rgba(139, 69, 19, 0.8); /* exemplo */
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  position: relative;   /* 🔑 referência para as imagens */
-  overflow: hidden;    /* permite que as imagens vazem */
+  position: relative;   
+  overflow: hidden;   
   z-index: 1;
   height: 115%;
 }
@@ -477,21 +476,21 @@ background-color: rgba(139, 69, 19, 0.8); /* exemplo */
 .assinatura h2 {
   padding-top: 1rem;
   text-align: center;
-  font-size: 8rem;   /* 4rem é grande, mas legível, pode aumentar se quiser */
-  margin: 0 0 5rem 0; /* margem embaixo para dar espaçamento */
+  font-size: 8rem;  
+  margin: 0 0 5rem 0;
   color: #354524;
 }
 
 .assinatura p {
   padding-top: 1rem;
   text-align: center;
-  font-size: 3.5rem;   /* 4rem é grande, mas legível, pode aumentar se quiser */
-  margin: 0 0 5rem 0; /* margem embaixo para dar espaçamento */
+  font-size: 3.5rem;   
+  margin: 0 0 5rem 0; 
   color: #354524;
 }
 
 .assinatura .container {
-  max-width: 600px;   /* limita largura do formulário */
+  max-width: 600px;  
   width: 100%;
   padding: 20px 40px;
   box-sizing: border-box;
@@ -506,15 +505,15 @@ background-color: rgba(139, 69, 19, 0.8); /* exemplo */
   margin-top: 20px;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  text-align: left;    /* garante que o texto do label fique alinhado à esquerda */
+  text-align: left;  
   width: 100%;
 }
 
 .assinatura input[type="text"],
 .assinatura input[type="email"],
 .assinatura textarea {
-   width: 700px; /* largura fixa em pixels */
-  max-width: 100%;      /* garante que não ultrapasse */
+   width: 700px; 
+  max-width: 100%;     
   padding: 15px 20px;
   font-size: 3rem;
   border: 5px solid #7f5732;
@@ -524,12 +523,12 @@ background-color: rgba(139, 69, 19, 0.8); /* exemplo */
   box-sizing: border-box;
   resize: none;
   
-  height: 60px;         /* controla a altura dos inputs */
+  height: 60px;         
 }
 
 .assinatura textarea {
-  min-height: 120px;    /* altura maior para o campo de texto */
-  height: 100px;         /* permite expandir conforme conteúdo */
+  min-height: 120px;   
+  height: 100px;         
 }
 
 .assinatura button {
@@ -551,7 +550,7 @@ background-color: rgba(139, 69, 19, 0.8); /* exemplo */
 }
 
 .assinatura button:hover {
-  background-color: #7F3D1D; /* NOVA cor ao hover */
+  background-color: #7F3D1D; 
   transform: scale(1.08);
   box-shadow: 0 0 20px rgba(244, 201, 112, 0.5);
 }
@@ -574,7 +573,7 @@ background-color: rgba(139, 69, 19, 0.8); /* exemplo */
 
 /* Patterns da Assinatura */
 .assinatura .fixed-img {
-  position: absolute;   /* 🔑 não interfere no fluxo */
+  position: absolute;   
   z-index: 10;
   height: auto;
   object-fit: contain;
@@ -582,14 +581,14 @@ background-color: rgba(139, 69, 19, 0.8); /* exemplo */
 
 /* Imagem 1 direita*/
 .assinatura .img1 {
-   bottom: -28rem;  /* desce da borda da seção */
+   bottom: -28rem; 
   left: 75%;
   width: 900px;
 }
 
 /* Imagem 2 */
 .assinatura .img2 {
-  bottom: -28rem;  /* desce da borda da seção */
+  bottom: -28rem; 
   right: 75%;
  transform: scaleX(-1);
 width: 900px;
@@ -599,11 +598,11 @@ width: 900px;
 .footer {
   background-color: #7F3D1D;
   color: #E3BF87;
-  height: 80px;               /* mesma altura do header/nav */
+  height: 80px;               
   display: flex;
   align-items: center;
-  position: relative;         /* referência para a ferradura */
-  overflow: visible;          /* deixa a ferradura vazar pra cima */
+  position: relative;        
+  overflow: visible;         
 }
 
 .footer-content {
@@ -613,7 +612,7 @@ width: 900px;
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  position: relative; /* garante que textos fiquem normais */
+  position: relative;
 }
 
 .footer-left,
@@ -658,6 +657,7 @@ width: 900px;
   transform: translateX(-50%) translateY(-25px) scale(1.1);
   filter: brightness(1.4) drop-shadow(0 0 20px #f1b63e) drop-shadow(0 0 40px #f1b63e);
 }
+
 
 
 
