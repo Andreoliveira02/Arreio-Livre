@@ -9,7 +9,7 @@ html, body {
   height: 100%;
   font-family: Arial, sans-serif;
   font-size: 10px;
-  overflow-x: hidden; 
+  overflow-x: hidden; /* Impede rolagem horizontal causada por imagens que vazam */
     scroll-behavior: smooth;
 }
 
@@ -41,12 +41,12 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh; 
+  height: 90vh; /* 90% da altura do viewport */
   background-color: #f0f0f0;
-  border: 2px solid #333;
+  border: 0.2 solid #333;
   margin: 0 auto;
-  position: relative;  
-  overflow: visible;   
+  position: relative;  /* contexto para imagens posicionadas absolutamente */
+  overflow: visible;   /* permite que imagens ultrapassem a seção (mas não o body) */
 }
 
 .content {
@@ -57,8 +57,7 @@ h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 2px red solid;
-  position: relative;
+  position: relative; /* mantém contexto para filhos */
 }
 
 /* Navbar */
@@ -98,7 +97,7 @@ h2 {
 }
 
 .navbar-logo img {
-  max-width: 120px;
+  max-width: 12rem;
   height: auto;
   padding: 0.5rem 0;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -114,14 +113,14 @@ h2 {
 .navbar .fab:hover {
   transform: scale(1.3);
   color: #f1b63e;
-  text-shadow: 0 0 8px rgba(241, 182, 62, 0.5);
+  text-shadow: 0 0 0.8rem rgba(241, 182, 62, 0.5);
 }
 
 /* Links da navbar */
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 80px;
+  gap: 8rem;
 }
 
 .navbar-links li {
@@ -133,7 +132,7 @@ h2 {
   color: #E3BF87;
   position: relative;
   display: inline-block;
-  padding-bottom: 2px;
+  padding-bottom: 0.2rem;
   transition: color 0.3s ease, transform 0.3s ease;
    font-family: 'CSBoline', sans-serif;
 }
@@ -145,7 +144,7 @@ h2 {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 0.2rem;
   background-color: #f1b63e;
   transform: scaleX(0);
   transform-origin: bottom right;
@@ -154,7 +153,7 @@ h2 {
 
 .navbar-links a:hover {
   color: #f1b63e;
-  transform: translateY(-2px) scale(1.2);
+  transform: translateY(-0.2rem) scale(1.2);
 }
 
 .navbar-links a:hover::after {
@@ -164,7 +163,7 @@ h2 {
 
 .navbar-links a:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(241, 182, 62, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(241, 182, 62, 0.5);
 }
 
 
@@ -180,30 +179,30 @@ h2 {
 .capa .fixed-img {
   position: absolute;
   z-index: 10;
-  max-width: 40000px; 
+  max-width: 400rem; /* limite fixo para desktop */
   height: auto;
   object-fit: contain;
 }
 
 .capa .logo-animada {
-  top: -50px;
-  left: 1300px;   
-  width: 1350px;  
+  top: -5rem;
+  left: 130rem;    /* distância da esquerda */
+  width: 135rem;   /* largura fixa */
 }
 
 /* Imagem 1 */
 .capa .img1 {
-  top: -28rem;   
-  left: 1250px;  
-  width: 800px;   
+  top: -28rem;    /* 15rem = 150px acima */
+  left: 125rem;    /* distância da esquerda */
+  width: 80rem;   /* largura fixa */
 }
 
 /* Imagem 2 */
 .capa .img2 {
-  bottom: -28rem; 
-  right: 1250px;  
+  bottom: -28rem; /* 25rem = 250px abaixo */
+  right: 125rem;   /* distância da direita */
   transform: scale(-1, -1);
-  width: 800px;
+  width: 80rem;
 }
 
 /* Seção Projeto */
@@ -211,13 +210,13 @@ h2 {
   background-color: #e3bf87;
   position: relative;
   overflow: visible;
-  height: 90vh; 
+  height: 90vh; /* para manter a altura como na capa */
 }
 
 /* Conteúdo textual */
 .Projeto p {
-  font-size: 3.5rem; 
-  margin-top: 2rem; 
+  font-size: 3.5rem; /* 40px */
+  margin-top: 2rem; /* 20px */
   text-align: justify !important;
 }
 
@@ -228,7 +227,7 @@ h2 {
   justify-content: flex-start;
   width: 80%;
   height: 100%;
-  padding: 2rem; 
+  padding: 2rem; /* 20px */
   box-sizing: border-box;
   position: relative;
   z-index: 1;
@@ -242,7 +241,7 @@ h2 {
 /* Texto invasor */
 .Projeto .texto-invasor {
   position: relative;
-  transform: translateY(-15rem); 
+  transform: translateY(-15rem); /* -150px */
   z-index: 5;
 }
 
@@ -250,32 +249,32 @@ h2 {
 .Projeto .fixed-img {
   position: absolute;
   z-index: 10;
-  max-width: 4000px; 
+  max-width: 400rem; /* limite grande para desktop */
   height: auto;
   object-fit: contain;
 }
 
 /* Imagem 1 */
 .Projeto .img1 {
-  top: -120px;     
-  left: 350px;
-  width: 400px;   
+  top: -12rem;       /* posição fixa */
+  left: 35rem;
+  width: 40rem;     /* tamanho fixo */
   animation: girar 60s linear infinite;
 }
 
 /* Imagem 2 */
 .Projeto .img2 {
-  bottom: -70px;   
-  right: 1000px;
-  width: 600px;
+  bottom: -7rem;    /* distância fixa da base */
+  right: 100rem;
+  width: 60rem;
 }
 
 /* Imagem 3 */
 .Projeto .img3 {
-  bottom: -3px;
-  right: -300px;
-  width: 1200px;
-  clip-path: inset(0 0% 0 0); 
+  bottom: -0.1rem;
+  right: -30rem;
+  width: 120rem;
+  clip-path: inset(0 0% 0 0); /* corta parte direita para evitar overflow */
 }
 
 /* Seção Ameaça */
@@ -293,7 +292,7 @@ h2 {
 }
 
 .ameaca h2 {
-  padding-top: 3rem; 
+  padding-top: 3rem; /* 30px */
   padding-bottom: 3rem;
   text-align: left;
   font-size: 8rem;
@@ -315,7 +314,7 @@ h2 {
   justify-content: flex-start;
   width: 80%;
   height: 100%;
-  padding: 2rem 1.25rem;
+  padding: 2rem 1.25rem; /* 20px 20px */
   box-sizing: border-box;
   position: relative;
   z-index: 1;
@@ -327,7 +326,7 @@ h2 {
 }
 
 .ameaca .content h2 {
-  width: 80%; 
+  width: 80%; /* ou 100% se quiser ocupar tudo */
 }
 
 .meia-elipse {
@@ -335,32 +334,33 @@ h2 {
   top: 20%;
   right: 0;
   transform: translateY(-50%);
-  width: 500px;
-  height: 300px;
-  background-color: #e3bb7d; 
-  border: 12px solid #2f3e1e; 
+  width: 50rem;
+  height: 30rem;
+  background-color: #e3bb7d; /* bege */
+  border: 1.2rem solid #2f3e1e; /* verde escuro */
   border-right: none;
-  border-top-left-radius: 999px;
-  border-bottom-left-radius: 999px;
+  border-top-left-radius: 100rem;
+  border-bottom-left-radius: 100rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   box-sizing: border-box;
 display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; 
+  overflow: hidden; /* garante que nada saia da elipse */
 }
 
 .meia-elipse {
+  /* ... já está com seu CSS atual */
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; 
+  overflow: hidden; /* garante que nada saia da elipse */
 }
 
 .img-na-elipse {
   position: absolute;
-  width: 250px; 
+  width: 25rem; /* ou o tamanho desejado */
   height: auto;
   object-fit: contain;
 
@@ -372,24 +372,24 @@ display: flex;
 .ameaca .fixed-img {
   position: absolute;
   z-index: 10;
-  max-width: 4000px; 
+  max-width: 400rem; /* tamanho fixo */
   height: auto;
   object-fit: contain;
 }
 
 /* Imagem 1 */
 .ameaca .img1 {
-  top: 30%;    
-  left: 800PX;
-  width: 750px; 
+  top: 30%;    /* 180% para ultrapassar a área */
+  left: 80rem;
+  width: 75rem; /* tamanho fixo */
   position: absolute;
   object-fit: contain;
 }
 
 
 .divisor {
-  height: 80px; 
-  background-color: #7F3D1D; 
+  height: 8rem; /* espessura da linha */
+  background-color: #7F3D1D; /* cor da linha */
   width: 100%;
 }
 
@@ -397,8 +397,8 @@ display: flex;
 .cultura {
   height: 100vh;
   position: relative;
-  background-color: #000; 
-  background-image: url('./burru.png'); 
+  background-color: #000; /* cor fallback */
+  background-image: url('./burru.png'); /* substitua pelo caminho da imagem */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -420,9 +420,9 @@ display: flex;
   justify-content: flex-start;
   width: 90%;
   height: 100%;
-  padding: 20px;
+  padding: 2rem;
   box-sizing: border-box;
-  gap: 20px;
+  gap: 2rem;
 }
 
 /* Imagem ocupa a esquerda e todo o espaço possível */
@@ -437,21 +437,21 @@ display: flex;
   width: 100%;
   height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 0.8rem;
 }
 
 /* Texto fica à direita, com largura limitada */
 .cultura-texto {
   width: 50%;
-  text-align: justify; 
-  font-size: 3.5rem; 
-  line-height: 1.6; 
-  color: #fff; 
-background-color: rgba(139, 69, 19, 0.8); 
-  padding: 3rem; 
-  border-radius: 20px; 
-  letter-spacing: 0.05em; 
-  box-sizing: border-box; 
+  text-align: justify; /* texto justificado */
+  font-size: 3.5rem; /* reduz um pouco para melhorar legibilidade */
+  line-height: 1.6; /* espaçamento entre linhas para melhor leitura */
+  color: #fff; /* cor branca para contraste com fundo escuro */
+background-color: rgba(139, 69, 19, 0.8); /* exemplo */
+  padding: 3rem; /* espaçamento interno */
+  border-radius: 2rem; /* bordas arredondadas */
+  letter-spacing: 0.05em; /* espaçamento entre letras */
+  box-sizing: border-box; /* garantir que padding não aumente a largura */
   
 }
 
@@ -467,8 +467,8 @@ background-color: rgba(139, 69, 19, 0.8);
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  position: relative;   
-  overflow: hidden;   
+  position: relative;   /* 🔑 referência para as imagens */
+  overflow: hidden;    /* permite que as imagens vazem */
   z-index: 1;
   height: 115%;
 }
@@ -476,23 +476,23 @@ background-color: rgba(139, 69, 19, 0.8);
 .assinatura h2 {
   padding-top: 1rem;
   text-align: center;
-  font-size: 8rem;  
-  margin: 0 0 5rem 0;
+  font-size: 8rem;   /* 4rem é grande, mas legível, pode aumentar se quiser */
+  margin: 0 0 5rem 0; /* margem embaixo para dar espaçamento */
   color: #354524;
 }
 
 .assinatura p {
   padding-top: 1rem;
   text-align: center;
-  font-size: 3.5rem;   
-  margin: 0 0 5rem 0; 
+  font-size: 3.5rem;   /* 4rem é grande, mas legível, pode aumentar se quiser */
+  margin: 0 0 5rem 0; /* margem embaixo para dar espaçamento */
   color: #354524;
 }
 
 .assinatura .container {
-  max-width: 600px;  
+  max-width: 60rem;   /* limita largura do formulário */
   width: 100%;
-  padding: 20px 40px;
+  padding: 2rem 4rem;
   box-sizing: border-box;
 }
 
@@ -501,45 +501,45 @@ background-color: rgba(139, 69, 19, 0.8);
   font-size: 3rem;
   color: #5a3a21;
   display: block;
-  margin-bottom: 8px;
-  margin-top: 20px;
+  margin-bottom: 0.8rem;
+  margin-top: 2rem;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  text-align: left;  
+  text-align: left;    /* garante que o texto do label fique alinhado à esquerda */
   width: 100%;
 }
 
 .assinatura input[type="text"],
 .assinatura input[type="email"],
 .assinatura textarea {
-   width: 700px; 
-  max-width: 100%;     
-  padding: 15px 20px;
+   width: 70rem; /* largura fixa em pixels */
+  max-width: 100%;      /* garante que não ultrapasse */
+  padding: 1.5rem 2rem;
   font-size: 3rem;
-  border: 5px solid #7f5732;
-  border-radius: 30px;
+  border: 0.5rem solid #7f5732;
+  border-radius: 3rem;
   outline: none;
   font-family: Arial, sans-serif;
   box-sizing: border-box;
   resize: none;
   
-  height: 60px;         
+  height: 6rem;         /* controla a altura dos inputs */
 }
 
 .assinatura textarea {
-  min-height: 120px;   
-  height: 100px;         
+  min-height: 12rem;    /* altura maior para o campo de texto */
+  height: 10rem;         /* permite expandir conforme conteúdo */
 }
 
 .assinatura button {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   background-color: #34401e;
   color: #F4C970;
   border: none;
-  padding: 25px 35px;
+  padding: 2.5rem 3.5rem;
   font-size: 4rem;
-  border-radius: 30px;
+  border-radius: 30rem;
   cursor: pointer;
   text-transform: none;
   font-weight: bold;
@@ -550,9 +550,9 @@ background-color: rgba(139, 69, 19, 0.8);
 }
 
 .assinatura button:hover {
-  background-color: #7F3D1D; 
+  background-color: #7F3D1D; /* NOVA cor ao hover */
   transform: scale(1.08);
-  box-shadow: 0 0 20px rgba(244, 201, 112, 0.5);
+  box-shadow: 0 0 2rem rgba(244, 201, 112, 0.5);
 }
 
 /* animação de pulso contínua */
@@ -563,7 +563,7 @@ background-color: rgba(139, 69, 19, 0.8);
   }
   50% {
     transform: scale(1.02);
-    box-shadow: 0 0 15px 5px rgba(244, 201, 112, 0.3);
+    box-shadow: 0 0 1.5rem 0.5rem rgba(244, 201, 112, 0.3);
   }
   100% {
     transform: scale(1);
@@ -573,7 +573,7 @@ background-color: rgba(139, 69, 19, 0.8);
 
 /* Patterns da Assinatura */
 .assinatura .fixed-img {
-  position: absolute;   
+  position: absolute;   /* 🔑 não interfere no fluxo */
   z-index: 10;
   height: auto;
   object-fit: contain;
@@ -581,28 +581,28 @@ background-color: rgba(139, 69, 19, 0.8);
 
 /* Imagem 1 direita*/
 .assinatura .img1 {
-   bottom: -28rem; 
+   bottom: -28rem;  /* desce da borda da seção */
   left: 75%;
-  width: 900px;
+  width: 90rem;
 }
 
 /* Imagem 2 */
 .assinatura .img2 {
-  bottom: -28rem; 
+  bottom: -28rem;  /* desce da borda da seção */
   right: 75%;
  transform: scaleX(-1);
-width: 900px;
+width: 90rem;
 }
 
 
 .footer {
   background-color: #7F3D1D;
   color: #E3BF87;
-  height: 80px;               
+  height: 8rem;               /* mesma altura do header/nav */
   display: flex;
   align-items: center;
-  position: relative;        
-  overflow: visible;         
+  position: relative;         /* referência para a ferradura */
+  overflow: visible;          /* deixa a ferradura vazar pra cima */
 }
 
 .footer-content {
@@ -612,7 +612,7 @@ width: 900px;
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  position: relative;
+  position: relative; /* garante que textos fiquem normais */
 }
 
 .footer-left,
@@ -645,7 +645,7 @@ width: 900px;
   top: -150%;
   left: 50%;
   transform: translateX(-50%);
-  height: 200px;
+  height: 20rem;
   width: auto;
   cursor: pointer;
   transition: transform 0.25s ease, filter 0.25s ease;
@@ -654,12 +654,37 @@ width: 900px;
 
 /* Efeito ao passar o mouse */
 .scroll-image:hover {
-  transform: translateX(-50%) translateY(-25px) scale(1.1);
-  filter: brightness(1.4) drop-shadow(0 0 20px #f1b63e) drop-shadow(0 0 40px #f1b63e);
+  transform: translateX(-50%) translateY(-2.5rem) scale(1.1);
+  filter: brightness(1.4) drop-shadow(0 0 2rem #f1b63e) drop-shadow(0 0 4rem #f1b63e);
+}
+
+
+@media (max-width: 1600px) { 
+    html {
+        font-size: 8px
+    }
 }
 
 
 
+@media (max-width: 1440px) { 
+    html {
+        font-size: 7.5px
+    }
+}
 
+
+@media (max-width: 1366px) { 
+    html {
+        font-size: 7.2px
+    }
+}
+
+
+@media (max-width: 1280px) { 
+    html {
+        font-size: 7px
+    }
+}
 
 
