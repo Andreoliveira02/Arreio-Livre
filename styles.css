@@ -41,7 +41,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh; /* 90% da altura do viewport */
+  height: 90dvh; /* 90% da altura do viewport */
   background-color: #f0f0f0;
   border: 0.2 solid #333;
   margin: 0 auto;
@@ -172,7 +172,7 @@ h2 {
   background-color: #e3bf87;
   position: relative;
   overflow: visible;
-  height: 90vh;
+  height: 90dvh;
 }
 
 /* Imagens posicionadas dentro da seção Capa */
@@ -210,7 +210,7 @@ h2 {
   background-color: #e3bf87;
   position: relative;
   overflow: visible;
-  height: 90vh; /* para manter a altura como na capa */
+  height: 90dvh; /* para manter a altura como na capa */
 }
 
 /* Conteúdo textual */
@@ -282,7 +282,7 @@ h2 {
   background-color: #7F3D1D;
   position: relative;
   overflow: visible;
-  height: 90vh;
+  height: 90dvh;
   background-image:
     linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)),
     url("./terra.png");
@@ -395,7 +395,7 @@ display: flex;
 
 /* Seção Cultura */
 .cultura {
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   background-color: #000; /* cor fallback */
   background-image: url('./burru.png'); /* substitua pelo caminho da imagem */
