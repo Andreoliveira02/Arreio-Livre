@@ -30,6 +30,10 @@ html, body {
 
 body {
   font-family: 'Candara', sans-serif;
+   margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
 }
 
 h2 {
@@ -696,5 +700,6 @@ width: 90rem;
         font-size: 6.8px
     }
 }
+
 
 
