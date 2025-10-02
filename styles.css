@@ -199,7 +199,6 @@ min-height: clamp(80rem, 90vh, 110rem);
   top: -28rem;    /* 15rem = 150px acima */
   left: 90%;    /* distância da esquerda */
   width: 80rem;   /* largura fixa */
-   max-width: 80%; /* proteção extra */
 }
 
 /* Imagem 2 */
@@ -700,6 +699,7 @@ width: 90rem;
         font-size: 6.8px
     }
 }
+
 
 
 
