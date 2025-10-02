@@ -192,13 +192,35 @@ min-height: clamp(80rem, 90vh, 110rem);
   left: 130rem;    /* distância da esquerda */
   width: clamp(135rem, 1vw, 140rem);
   max-width: 90%;  /* nunca ultrapassa a tela */
+animation: pulseSwing 3s infinite ease-in-out; /* animação combinada de pulsação e balanço */
 }
+
+/* Animação combinada de pulsação e balanço */
+@keyframes pulseSwing {
+  0% {
+    transform: scale(1) rotate(0deg); /* Inicial, sem escalamento e rotação */
+  }
+  25% {
+    transform: scale(1.05) rotate(-2deg); /* Pulsação + Balanço para a esquerda */
+  }
+  50% {
+    transform: scale(1) rotate(2deg); /* Pulsação normal + Balanço para a direita */
+  }
+  75% {
+    transform: scale(1.05) rotate(-1deg); /* Pulsação + Balanço mais suave para a esquerda */
+  }
+  100% {
+    transform: scale(1) rotate(0deg); /* Finaliza com a escala normal e sem rotação */
+  }
+}
+
 
 /* Imagem 1 */
 .capa .img1 {
   top: -28rem;    /* 15rem = 150px acima */
   left: 90%;    /* distância da esquerda */
   width: 80rem;   /* largura fixa */
+   max-width: 80%; /* proteção extra */
 }
 
 /* Imagem 2 */
@@ -265,7 +287,17 @@ min-height: clamp(80rem, 90vh, 110rem);
   top: -12rem;       /* posição fixa */
   left: 20%;
   width: 40rem;     /* tamanho fixo */
-  animation: girar 60s linear infinite;
+     animation: girar 60s linear infinite; /* animação de rotação contínua */
+}
+
+/* Animação de rotação */
+@keyframes girar {
+  0% {
+    transform: rotate(0deg); /* Começa com a imagem na posição original */
+  }
+  100% {
+    transform: rotate(360deg); /* Gira até 360 graus */
+  }
 }
 
 /* Imagem 2 */
@@ -385,13 +417,50 @@ min-height: clamp(80rem, 90vh, 110rem);
 
 /* Imagem 1 */
 .ameaca .img1 {
-  top: 30%;    /* 180% para ultrapassar a área */
+  top: 30%;
   left: 55%;
   width: clamp(70rem, 1vw, 75rem);
   position: absolute;
   object-fit: contain;
+  animation: tremorRealista 3s ease-in-out infinite; /* Tremor mais fluido e dinâmico */
 }
 
+/* Animação de tremor realista */
+@keyframes tremorRealista {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg); /* Posição inicial */
+  }
+  10% {
+    transform: translateX(-5px) translateY(5px) rotate(-3deg); /* Move para a esquerda e para cima, girando */
+  }
+  20% {
+    transform: translateX(5px) translateY(-5px) rotate(3deg); /* Move para a direita e para baixo, girando */
+  }
+  30% {
+    transform: translateX(-7px) translateY(3px) rotate(-5deg); /* Move para a esquerda com mais rotação */
+  }
+  40% {
+    transform: translateX(7px) translateY(-3px) rotate(5deg); /* Move para a direita com rotação */
+  }
+  50% {
+    transform: translateX(0) translateY(0) rotate(0deg); /* Retorna à posição original */
+  }
+  60% {
+    transform: translateX(-5px) translateY(2px) rotate(-2deg); /* Move para a esquerda e para cima */
+  }
+  70% {
+    transform: translateX(5px) translateY(-2px) rotate(2deg); /* Move para a direita e para baixo */
+  }
+  80% {
+    transform: translateX(-3px) translateY(1px) rotate(-1deg); /* Movimento pequeno para a esquerda e cima */
+  }
+  90% {
+    transform: translateX(3px) translateY(-1px) rotate(1deg); /* Movimento pequeno para a direita e baixo */
+  }
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg); /* Retorna à posição original */
+  }
+}
 
 .divisor {
   height: 8rem; /* espessura da linha */
@@ -699,7 +768,5 @@ width: 90rem;
         font-size: 6.8px
     }
 }
-
-
 
 
