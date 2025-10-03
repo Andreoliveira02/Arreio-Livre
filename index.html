@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO -->
-  <title>Chega de Crueldade - Proteja os Jumentos</title>
+  <title>ARREIO LIVRE</title>
   <meta name="description" content="Petição contra o abate cruel de jumentos no Brasil. Assine e ajude a proteger a vida, a saúde pública e a cultura brasileira.">
   <meta name="keywords" content="abate de jumentos, ejiao, petição, proteção animal, cultura brasileira, saúde pública, crueldade animal">
   <meta name="author" content="André Oliveira">
@@ -13,15 +13,12 @@
   <!-- Social: Open Graph (Facebook, LinkedIn, etc.) -->
   <meta property="og:title" content="Chega de Crueldade - Proteja os Jumentos">
   <meta property="og:description" content="Assine a petição contra o abate de jumentos. Defenda a vida, a saúde e a cultura do Brasil.">
-  <meta property="og:image" content="https://seuprojeto.github.io/capa.png"> <!-- Troque pela URL absoluta da sua capa -->
-  <meta property="og:url" content="https://seuprojeto.github.io/">
   <meta property="og:type" content="website">
   
   <!-- Social: Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Chega de Crueldade - Proteja os Jumentos">
   <meta name="twitter:description" content="Assine a petição contra o abate de jumentos no Brasil. Defenda a vida, a cultura e a saúde pública.">
-  <meta name="twitter:image" content="https://seuprojeto.github.io/capa.png">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="./icon.png">
@@ -41,17 +38,28 @@
         <img src="./logonav.png" alt="Logo" class="logo-img">
       </a>
     </div>
+
     <ul class="navbar-links">
       <li><a href="#Projeto">Sobre</a></li>
       <li><a href="#ameaca">Ameaça</a></li>
       <li><a href="#cultura">Cultura</a></li>
       <li><a href="#assinatura" class="pulsing-link">Assine Agora</a></li>
     </ul>
-    <div class="navbar-social">
-      <a href="https://www.instagram.com.br" target="_blank" class="instagram-link">
+
+     <div class="navbar-social">
+      <a href="https://www.instagram.com/arreio_livre?igsh=NmIxcnY1eWo0azc2" target="_blank" class="instagram-link">
         <i class="fab fa-instagram instagram-icon"></i>
       </a>
     </div>
+
+    <!-- Botão de menu toggle -->
+  <button class="menu-toggle" aria-label="Abrir menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  
   </div>
 </nav>
 
@@ -113,13 +121,17 @@ Além disso, os jumentos têm valor cultural e afetivo, fazendo parte das tradi�
 </section>
 
 <div class="divisor"></div>
+
+
 <section class="section assinatura" id="assinatura">
   <div class="content">
     <h2>Chega de crueldade. <br>Proteja os jumentos, assine agora!</h2>
     <p> Junte-se a nós para defender a vida e a cultura dos jumentos. Eles merecem respeito e proteção. <br>Sua assinatura pode fazer a diferença!
     </p>
 
-<form action="#" method="POST" class="form">
+
+
+<form id="form-assinatura" class="form">
   <div class="form-group">
     <label for="name">NOME:</label>
     <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
@@ -135,35 +147,25 @@ Além disso, os jumentos têm valor cultural e afetivo, fazendo parte das tradi�
     <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem aqui" required></textarea>
   </div>
 
-  <button type="submit" class="btn-submit">ASSINAR ABAIXO-ASSINADO</button>
+  <button type="submit" class="btn-submit">
+    ASSINAR ABAIXO-ASSINADO
+    <span id="loader" class="loader" style="display:none;"></span>
+  </button>
 </form>
+
+<div id="resposta" style="margin-top: 15px; font-weight: bold;"></div>
+
+
+
+
+
+
     <img src="./pattern2.png" alt="Imagem 1" class="fixed-img img1">
     <img src="./pattern2.png" alt="Imagem 2" class="fixed-img img2">
   </div>
-</section>
 
-<!-- <section class="section outras" id="outras">
-  <div class="content">
-    <h2>Outros abaixo-assinados</h2>
-    <div class="image-grid">
-      <div class="image-item">
-        <a href="https://www.change.org/p/presidente-lulaoficial-por-se-tratar-de-uma-quest%C3%A3o-de-sa%C3%BAde-p%C3%BAblica-e-direito-dos-animais-exigimos-o-fim-imediato-do-abate-dos-jumentos?source_location=search" target="_blank">
-          <img src="/Marca/Etc/AAA.png" alt="Assinado 1">
-        </a>
-      </div>
-      <div class="image-item">
-        <a href="https://www.change.org/p/oab-brasil-n%C3%A3o-ao-abate-de-jumentos-no-brasil?source_location=search" target="_blank">
-          <img src="/Marca/Etc/bbb.png" alt="Assinado 2">
-        </a>
-      </div>
-      <div class="image-item">
-        <a href="https://fimdoabate.com.br/?utm_source=chatgpt.com" target="_blank">
-          <img src="/Marca/Etc/logo-donkey_sanctuary-rodape.svg" alt="Assinado 3">
-        </a>
-      </div>
-    </div>
-  </div>
-</section> -->
+
+</section>
 
   <!-- Footer -->
 <footer class="footer">
@@ -187,12 +189,75 @@ Além disso, os jumentos têm valor cultural e afetivo, fazendo parte das tradi�
   </div>
 </footer>
 
+<script>
+  const form = document.getElementById("form-assinatura");
+  const botao = form.querySelector("button[type='submit']");
+  const loader = document.getElementById("loader");
+  const resposta = document.getElementById("resposta");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // Mostrar loader e desabilitar botão
+    botao.disabled = true;
+    botao.innerText = "Enviando...";
+    botao.appendChild(loader);
+    loader.style.display = "inline-block";
+
+    const formData = new FormData(form);
+    const data = new URLSearchParams(formData);
+
+    // Substitua pelo seu URL do Web App do Google Apps Script (publicado)
+    const endpoint = "https://script.google.com/macros/s/AKfycbxtWkucDSfZCTNnrJNXBsm6gsFEr71s0MUMe1eaW9X7-RLrZWDrXwg8Y4tWw0COUI9E/exec";
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        body: data,
+      });
+
+      loader.style.display = "none";
+      botao.disabled = false;
+      botao.innerText = "ASSINAR ABAIXO-ASSINADO";
+
+      if (response.ok) {
+        resposta.style.color = "green";
+        resposta.innerText = "✅ Assinatura enviada com sucesso!";
+        form.reset();
+
+        setTimeout(() => {
+          location.reload();
+        }, 3000);
+      } else {
+        resposta.style.color = "red";
+        resposta.innerText = "❌ Erro ao enviar. Tente novamente.";
+      }
+    } catch (error) {
+      loader.style.display = "none";
+      botao.disabled = false;
+      botao.innerText = "ASSINAR ABAIXO-ASSINADO";
+
+      resposta.style.color = "orange";
+      resposta.innerText = "⚠️ Erro de conexão.";
+    }
+  });
+
+
+    const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.navbar-links');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+
+</script>
+
+
 </body>
 
 
 
 </html>
-
 
 
 

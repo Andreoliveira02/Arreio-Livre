@@ -15,14 +15,14 @@ html, body {
 
 @font-face {
   font-family: 'CSBoline';
-  src: url('./csb.otf') format('opentype');
+  src: url('/links/vinculos/csb.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Candara';
-  src: url('./Candara.ttf') format('opentype');
+  src: url('/links/vinculos/Candara.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -34,6 +34,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   position: relative;
+  background-color: #e3bb7d;
 }
 
 h2 {
@@ -169,13 +170,34 @@ h2 {
   box-shadow: 0 0 0 0.2rem rgba(241, 182, 62, 0.5);
 }
 
+/* Estilo do botão do menu (hamburger) */
+.menu-toggle {
+  display: none; /* Oculta no desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 4rem;
+  height: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menu-toggle .bar {
+  height: 0.4rem;
+  width: 100%;
+  background-color: #E3BF87;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
 
 /* Seções - Capa */
 .capa {
   background-color: #e3bf87;
   position: relative;
   overflow: visible;
-min-height: clamp(80rem, 90vh, 110rem); 
+  height: 110rem; 
 }
 
 /* Imagens posicionadas dentro da seção Capa */
@@ -214,13 +236,11 @@ animation: pulseSwing 3s infinite ease-in-out; /* animação combinada de pulsa�
   }
 }
 
-
 /* Imagem 1 */
 .capa .img1 {
   top: -28rem;    /* 15rem = 150px acima */
   left: 90%;    /* distância da esquerda */
   width: 80rem;   /* largura fixa */
-   max-width: 80%; /* proteção extra */
 }
 
 /* Imagem 2 */
@@ -237,7 +257,7 @@ animation: pulseSwing 3s infinite ease-in-out; /* animação combinada de pulsa�
   background-color: #e3bf87;
   position: relative;
   overflow: visible;
-  min-height: clamp(80rem, 90vh, 110rem); 
+   height: 110rem; 
 }
 
 /* Conteúdo textual */
@@ -287,7 +307,7 @@ animation: pulseSwing 3s infinite ease-in-out; /* animação combinada de pulsa�
   top: -12rem;       /* posição fixa */
   left: 20%;
   width: 40rem;     /* tamanho fixo */
-     animation: girar 60s linear infinite; /* animação de rotação contínua */
+    animation: girar 60s linear infinite; /* animação de rotação contínua */
 }
 
 /* Animação de rotação */
@@ -415,7 +435,6 @@ animation: pulseSwing 3s infinite ease-in-out; /* animação combinada de pulsa�
   object-fit: contain;
 }
 
-/* Imagem 1 */
 .ameaca .img1 {
   top: 30%;
   left: 55%;
@@ -462,10 +481,12 @@ animation: pulseSwing 3s infinite ease-in-out; /* animação combinada de pulsa�
   }
 }
 
+
 .divisor {
   height: 8rem; /* espessura da linha */
   background-color: #7F3D1D; /* cor da linha */
   width: 100%;
+   overflow: hidden; /* Ou auto, se for necessário ter rolagem interna */
 }
 
 /* Seção Cultura */
@@ -484,6 +505,7 @@ animation: pulseSwing 3s infinite ease-in-out; /* animação combinada de pulsa�
   width: 100%;
   box-sizing: border-box;
   padding: 4rem 0;
+   overflow: hidden; /* Ou auto, se for necessário ter rolagem interna */
 }
 
 
@@ -516,17 +538,16 @@ animation: pulseSwing 3s infinite ease-in-out; /* animação combinada de pulsa�
 
 /* Texto fica à direita, com largura limitada */
 .cultura-texto {
-  width: 50%;
+  width: 55%;
   text-align: justify; /* texto justificado */
   font-size: 3.5rem; /* reduz um pouco para melhorar legibilidade */
   line-height: 1.6; /* espaçamento entre linhas para melhor leitura */
   color: #fff; /* cor branca para contraste com fundo escuro */
-background-color: rgba(139, 69, 19, 0.8); /* exemplo */
+  background-color: rgba(139, 69, 19, 0.8); /* exemplo */
   padding: 3rem; /* espaçamento interno */
   border-radius: 2rem; /* bordas arredondadas */
   letter-spacing: 0.05em; /* espaçamento entre letras */
   box-sizing: border-box; /* garantir que padding não aumente a largura */
-  
 }
 
 
@@ -545,7 +566,7 @@ background-color: rgba(139, 69, 19, 0.8); /* exemplo */
   overflow: hidden;    /* permite que as imagens vazem */
   z-index: 1;
   padding-bottom: 7rem;
-min-height: clamp(125rem, 90vh, 140rem); 
+  height: 140rem;
 }
 
 .assinatura h2 {
@@ -606,29 +627,7 @@ min-height: clamp(125rem, 90vh, 140rem);
   height: 10rem;         /* permite expandir conforme conteúdo */
 }
 
-.assinatura button {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  background-color: #34401e;
-  color: #F4C970;
-  border: none;
-  padding: 2.5rem 3.5rem;
-  font-size: 4rem;
-  border-radius: 30rem;
-  cursor: pointer;
-  text-transform: none;
-  font-weight: bold;
-  width: max-content;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-   font-family: 'CSBoline', sans-serif;
-  animation: pulse-slow 2.5s ease-in-out infinite;
-}
 
-.assinatura button:hover {
-  background-color: #7F3D1D; /* NOVA cor ao hover */
-  transform: scale(1.08);
-  box-shadow: 0 0 2rem rgba(244, 201, 112, 0.5);
-}
 
 /* animação de pulso contínua */
 @keyframes pulse-slow {
@@ -637,7 +636,7 @@ min-height: clamp(125rem, 90vh, 140rem);
     box-shadow: 0 0 0 0 rgba(244, 201, 112, 0.4);
   }
   50% {
-    transform: scale(1.02);
+    transform: scale(1.04);
     box-shadow: 0 0 1.5rem 0.5rem rgba(244, 201, 112, 0.3);
   }
   100% {
@@ -669,6 +668,73 @@ min-height: clamp(125rem, 90vh, 140rem);
 width: 90rem;
 }
 
+   .form-group {
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    button.btn-submit {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  background-color: #34401e;
+  color: #F4C970;
+  border: none;
+  padding: 2.5rem 3.5rem;
+  font-size: 4rem;
+  border-radius: 30rem;
+  cursor: pointer;
+  text-transform: none;
+  font-weight: bold;
+  width: max-content;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+   font-family: 'CSBoline', sans-serif;
+  animation: pulse-slow 2.5s ease-in-out infinite;
+}
+
+.assinatura button:hover {
+  background-color: #7F3D1D; /* NOVA cor ao hover */
+  transform: scale(1.08);
+  box-shadow: 0 0 2rem rgba(244, 201, 112, 0.5);
+}
+
+    button.btn-submit:disabled {
+      background-color: #7F3D1D;
+      cursor: not-allowed;
+    }
+
+    /* Loader (spinner) básico */
+    .loader {
+      border: 3px solid #f3f3f3; /* cinza claro */
+      border-top: 3px solid #3498db; /* azul */
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      animation: spin 1s linear infinite;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
 
 .footer {
   background-color: #7F3D1D;
@@ -733,6 +799,14 @@ width: 90rem;
   filter: brightness(1.4) drop-shadow(0 0 2rem #f1b63e) drop-shadow(0 0 4rem #f1b63e);
 }
 
+   #resposta {
+      margin-top: 1.5rem;
+      padding-bottom: 0.5;
+      font-size: 4rem;
+      font-weight: bold;
+      min-height: 40px;
+    }
+
 
 @media (max-width: 1750px) { 
     html {
@@ -769,4 +843,583 @@ width: 90rem;
     }
 }
 
+
+/* ============================= */
+/* VERSÃO MOBILE - TELAS PEQUENAS */
+/* ============================= */
+
+
+
+/* MEDIA QUERY MOBILE */
+  /* Mobile */
+@media (max-width: 768px) {
+  html {
+        font-size: 6px
+    }
+
+  .navbar-links,
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Mantém a navbar como flex com espaço entre, logo à esquerda e insta à direita */
+  .navbar {
+    padding: 0 1rem;
+    height: 10rem;
+  }
+
+  .navbar-social .instagram-icon {
+    font-size: 6rem; /* menor no mobile */
+  }
+
+.capa {
+  height: 80rem; 
+}
+
+.content {
+  width: 90%;
+  margin-top: -10rem;
+}
+
+/* Imagem 1 */
+.capa .img1 {
+  top: -10rem;    /* 15rem = 150px acima */
+  left: 85%;    /* distância da esquerda */
+  width: 40rem;   /* largura fixa */
+}
+
+/* Imagem 2 */
+.capa .img2 {
+  bottom: -10rem; /* 25rem = 250px abaixo */
+  right: 85%;   /* distância da direita */
+  transform: scale(-1, -1);
+  width: 40rem;
+}
+
+
+/* Seção Projeto */
+.Projeto {
+  background-color: #e3bf87;
+  position: relative;
+  overflow: visible;
+   height: 110rem; 
+}
+
+/* Conteúdo textual */
+.Projeto p {
+  font-size: 3.5rem; /* 40px */
+  margin-top: 2rem; /* 20px */
+  text-align: justify !important;
+  color: #354524;
+}
+
+.Projeto .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 90%;
+  height: 100%;
+  padding: 2rem; /* 20px */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.Projeto .content > * {
+  width: 60%;
+  text-align: left;
+}
+
+/* Texto invasor */
+.Projeto .texto-invasor {
+  position: relative;
+  transform: translateY(-15rem); /* -150px */
+  z-index: 5;
+}
+
+/* Imagens fixas */
+.Projeto .fixed-img {
+  position: absolute;
+  z-index: 10;
+  max-width: 400rem; /* limite grande para desktop */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Imagem 1 */
+.Projeto .img1 {
+  top: 5rem;       /* posição fixa */
+  left: 4%;
+  width: 40rem;     /* tamanho fixo */
+    animation: girar 60s linear infinite; /* animação de rotação contínua */
+}
+
+
+/* Imagem 2 */
+.Projeto .img2 {
+  bottom: -12rem;    /* distância fixa da base */
+  right: 60%;
+  width: 60rem;
+}
+
+/* Imagem 3 */
+.Projeto .img3 {
+  bottom: -5rem;
+  left: 40%;
+  width: 120rem;
+  clip-path: inset(0 0% 0 0); /* corta parte direita para evitar overflow */
+}
+
+
+
+/* Seção Ameaça */
+.ameaca {
+  background-color: #7F3D1D;
+  position: relative;
+  overflow: visible;
+  min-height: clamp(80rem, 90vh, 110rem); 
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)),
+    url("/links/vinculos/terra.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ameaca h2 {
+  padding-top: 9rem; /* 30px */
+  padding-bottom: 3rem;
+  text-align: left;
+  font-size: 6rem;
+  margin: 0;
+  color: #e3bf87;
+}
+
+.ameaca p {
+  font-size: 3.5rem;
+  margin-top: 1.5rem;
+  text-align: justify !important;
+  color: #e3bf87;
+}
+
+.ameaca .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 90%;
+  height: 100%;
+  padding: 2rem 1.25rem; /* 20px 20px */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.ameaca .content > * {
+  width: 50%;
+  text-align: left;
+}
+
+.ameaca .content h2 {
+  width: 80%; /* ou 100% se quiser ocupar tudo */
+}
+
+.meia-elipse {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 40rem;
+  height: 30rem;
+  background-color: #e3bb7d; /* bege */
+  border: 1.2rem solid #2f3e1e; /* verde escuro */
+  border-right: none;
+  border-top-left-radius: 100rem;
+  border-bottom-left-radius: 100rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* garante que nada saia da elipse */
+}
+
+.meia-elipse {
+  /* ... já está com seu CSS atual */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* garante que nada saia da elipse */
+}
+
+.img-na-elipse {
+  position: absolute;
+  width: 25rem; /* ou o tamanho desejado */
+  height: auto;
+  object-fit: contain;
+
+  top: 10%;
+  left: 10%;
+}
+
+/* Imagens posicionadas dentro da seção Ameaça */
+.ameaca .fixed-img {
+  position: absolute;
+  z-index: 10;
+  max-width: 400rem; /* tamanho fixo */
+  height: auto;
+  object-fit: contain;
+}
+
+.ameaca .img1 {
+  top: 45%;
+  left: 55%;
+  width: 55rem;
+  position: absolute;
+  object-fit: contain;
+  animation: tremorRealista 3s ease-in-out infinite; /* Tremor mais fluido e dinâmico */
+}
+
+/* Seção Cultura */
+.cultura {
+  min-height: clamp(80rem, 90vh, 110rem); 
+  position: relative;
+  background-color: #000; /* cor fallback */
+  background-image: url('./links/vinculos/burru.png'); /* substitua pelo caminho da imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4rem 0;
+   overflow: hidden; /* Ou auto, se for necessário ter rolagem interna */
+}
+
+
+.cultura .content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 95%;
+  min-height: clamp(80rem, 90vh, 110rem); 
+  padding: 2rem;
+  box-sizing: border-box;
+  gap: 2rem;
+}
+
+/* Imagem ocupa a esquerda e todo o espaço possível */
+
+/* Texto fica à direita, com largura limitada */
+.cultura-texto {
+  width: 55%;
+  text-align: justify; /* texto justificado */
+  font-size: 3rem; /* reduz um pouco para melhorar legibilidade */
+  line-height: 1.6; /* espaçamento entre linhas para melhor leitura */
+  color: #fff; /* cor branca para contraste com fundo escuro */
+  background-color: rgba(139, 69, 19, 0.8); /* exemplo */
+  padding: 3rem; /* espaçamento interno */
+  border-radius: 2rem; /* bordas arredondadas */
+  letter-spacing: 0.05em; /* espaçamento entre letras */
+  box-sizing: border-box; /* garantir que padding não aumente a largura */
+  margin-top: 10rem;
+}
+
+
+
+/* Seção Assinatura */
+.assinatura {
+  background-color: #E3BF87;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;   /* 🔑 referência para as imagens */
+  overflow: hidden;    /* permite que as imagens vazem */
+  z-index: 1;
+  padding-bottom: 7rem;
+  height: 135rem;
+}
+
+.assinatura .content{
+  width: 90%;
+  margin: 0;
+}
+
+
+
+.assinatura h2 {
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 6rem;   /* 4rem é grande, mas legível, pode aumentar se quiser */
+  margin: 0 0 5rem 0; /* margem embaixo para dar espaçamento */
+  color: #354524;
+}
+
+.assinatura p {
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 3rem;   /* 4rem é grande, mas legível, pode aumentar se quiser */
+  margin: 0 0 5rem 0; /* margem embaixo para dar espaçamento */
+  color: #354524;
+}
+
+.assinatura .container {
+  max-width: 60rem;   /* limita largura do formulário */
+  width: 100%;
+  padding: 2rem 40rem;
+  box-sizing: border-box;
+}
+
+.assinatura label {
+  font-weight: bold;
+  font-size: 3rem;
+  color: #5a3a21;
+  display: block;
+  margin-bottom: 0.8rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  text-align: left;    /* garante que o texto do label fique alinhado à esquerda */
+  width: 100%;
+}
+
+.assinatura input[type="text"],
+.assinatura input[type="email"],
+.assinatura textarea {
+   width: 70rem; /* largura fixa em pixels */
+  max-width: 100%;      /* garante que não ultrapasse */
+  padding: 1.5rem 2rem;
+  font-size: 2rem;
+  border: 0.5rem solid #7f5732;
+  border-radius: 3rem;
+  outline: none;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  resize: none;
+  
+  height: 6rem;         /* controla a altura dos inputs */
+}
+
+.assinatura textarea {
+  min-height: 12rem;    /* altura maior para o campo de texto */
+  height: 10rem;         /* permite expandir conforme conteúdo */
+}
+
+
+/* Patterns da Assinatura */
+.assinatura .fixed-img {
+  position: absolute;   /* 🔑 não interfere no fluxo */
+  z-index: 10;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Imagem 1 direita*/
+.assinatura .img1 {
+   bottom: -35rem;  /* desce da borda da seção */
+  left: 75%;
+  width: 90rem;
+}
+
+/* Imagem 2 */
+.assinatura .img2 {
+  bottom: -35rem;  /* desce da borda da seção */
+  right: 75%;
+ transform: scaleX(-1);
+width: 90rem;
+}
+
+   .form-group {
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    button.btn-submit {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  background-color: #34401e;
+  color: #F4C970;
+  border: none;
+  padding: 2.5rem 3.5rem;
+  font-size: 4rem;
+  border-radius: 30rem;
+  cursor: pointer;
+  text-transform: none;
+  font-weight: bold;
+  width: max-content;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+   font-family: 'CSBoline', sans-serif;
+  animation: pulse-slow 2.5s ease-in-out infinite;
+}
+
+.assinatura button:hover {
+  background-color: #7F3D1D; /* NOVA cor ao hover */
+  transform: scale(1.08);
+  box-shadow: 0 0 2rem rgba(244, 201, 112, 0.5);
+}
+
+    button.btn-submit:disabled {
+      background-color: #7F3D1D;
+      cursor: not-allowed;
+    }
+
+    /* Loader (spinner) básico */
+    .loader {
+      border: 3px solid #f3f3f3; /* cinza claro */
+      border-top: 3px solid #3498db; /* azul */
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      animation: spin 1s linear infinite;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+.footer {
+  background-color: #7F3D1D;
+  color: #E3BF87;
+  height: 8rem;               /* mesma altura do header/nav */
+  display: flex;
+  align-items: center;
+  position: relative;         /* referência para a ferradura */
+  overflow: visible;          /* deixa a ferradura vazar pra cima */
+}
+
+.footer-content {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  position: relative; /* garante que textos fiquem normais */
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+  font-size: 3rem;
+  color: #E3BF87;
+   font-family: 'CSBoline', sans-serif;
+}
+
+.footer-left a,
+.footer-right a {
+  color: #E3BF87;
+  text-decoration: none;
+  transition: color 0.3s ease;
+   font-family: 'CSBoline', sans-serif;
+}
+
+.footer-left a:hover,
+.footer-right a:hover {
+  color: #f1b63e;
+}
+
+.footer-left { text-align: left; }
+.footer-right { text-align: right; }
+
+/* ferradura solta no meio */
+.scroll-image {
+  position: absolute;
+  top: -90%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 15rem;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  z-index: 100;
+}
+
+/* Efeito ao passar o mouse */
+.scroll-image:hover {
+  transform: translateX(-50%) translateY(-2.5rem) scale(1.1);
+  filter: brightness(1.4) drop-shadow(0 0 2rem #f1b63e) drop-shadow(0 0 4rem #f1b63e);
+}
+
+   #resposta {
+      margin-top: 1.5rem;
+      padding-bottom: 0.5;
+      font-size: 4rem;
+      font-weight: bold;
+      min-height: 40px;
+    }
+
+
+
+
+
+
+
+
+}
+
+@media (max-width: 650px) {
+  html {
+        font-size: 5px
+    }
+  }
+
+  @media (max-width: 550px) {
+  html {
+        font-size: 4px
+    }
+  }
+
+   @media (max-width: 460px) {
+  html {
+        font-size: 3px
+    }
+
+    .assinatura {
+  background-color: #E3BF87;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;   /* 🔑 referência para as imagens */
+  overflow: hidden;    /* permite que as imagens vazem */
+  z-index: 1;
+  padding-top: 15rem;
+}
+    .assinatura .content{
+  width: 90%;
+  margin: 0;
+}
+
+  }
 
