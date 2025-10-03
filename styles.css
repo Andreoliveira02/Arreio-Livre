@@ -15,14 +15,14 @@ html, body {
 
 @font-face {
   font-family: 'CSBoline';
-  src: url('/links/vinculos/csb.otf') format('opentype');
+  src: url('./csb.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Candara';
-  src: url('/links/vinculos/Candara.ttf') format('opentype');
+  src: url('./Candara.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -379,12 +379,12 @@ animation: pulseSwing 3s infinite ease-in-out; /* animação combinada de pulsa�
 }
 
 .ameaca .content > * {
-  width: 50%;
+  width: 60%;
   text-align: left;
 }
 
 .ameaca .content h2 {
-  width: 80%; /* ou 100% se quiser ocupar tudo */
+  width: 95%; /* ou 100% se quiser ocupar tudo */
 }
 
 .meia-elipse {
@@ -538,7 +538,7 @@ animation: pulseSwing 3s infinite ease-in-out; /* animação combinada de pulsa�
 
 /* Texto fica à direita, com largura limitada */
 .cultura-texto {
-  width: 55%;
+  width: 60%;
   text-align: justify; /* texto justificado */
   font-size: 3.5rem; /* reduz um pouco para melhorar legibilidade */
   line-height: 1.6; /* espaçamento entre linhas para melhor leitura */
@@ -1422,4 +1422,5 @@ width: 90rem;
 }
 
   }
+
 
