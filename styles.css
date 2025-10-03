@@ -979,9 +979,6 @@ width: 90rem;
   position: relative;
   overflow: visible;
   min-height: clamp(80rem, 90vh, 110rem); 
-  background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)),
-    url("/links/vinculos/terra.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1087,7 +1084,6 @@ width: 90rem;
   min-height: clamp(80rem, 90vh, 110rem); 
   position: relative;
   background-color: #000; /* cor fallback */
-  background-image: url('./links/vinculos/burru.png'); /* substitua pelo caminho da imagem */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
