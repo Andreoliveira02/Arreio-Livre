@@ -436,7 +436,7 @@ animation: pulseSwing 3s infinite ease-in-out; /* animação combinada de pulsa�
 }
 
 .ameaca .img1 {
-  top: 40%;
+  top: 35%;
   left: 60%;
   width: clamp(65rem, 1vw, 65rem);
   position: absolute;
@@ -1418,6 +1418,7 @@ width: 90rem;
 }
 
   }
+
 
 
 
