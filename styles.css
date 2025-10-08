@@ -436,9 +436,9 @@ animation: pulseSwing 3s infinite ease-in-out; /* animação combinada de pulsa�
 }
 
 .ameaca .img1 {
-  top: 30%;
-  left: 55%;
-  width: clamp(55rem, 1vw, 55rem);
+  top: 40%;
+  left: 60%;
+  width: clamp(65rem, 1vw, 65rem);
   position: absolute;
   object-fit: contain;
   animation: tremorRealista 3s ease-in-out infinite; /* Tremor mais fluido e dinâmico */
@@ -1418,6 +1418,7 @@ width: 90rem;
 }
 
   }
+
 
 
 
